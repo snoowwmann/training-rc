@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 const SUPABASE_URL = "https://wqfouncmysvajyhjnntt.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZm91bmNteXN2YWp5aGpubnR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0Mzc3NzUsImV4cCI6MjA5MTAxMzc3NX0const sb = (endpoint, opts = {}) => fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZm91bmNteXN2YWp5aGpubnR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0Mzc3NzUsImV4cCI6MjA5MTAxMzc3NX0.Zb89er0PkbDvH_TZfsZ_sCm-gkUTDzYau1BguQz3u0A";
 ...opts,
 headers: { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}`, "Content-Type": }).then(r => r.ok ? r.json() : Promise.reject(r));
 const sbGet = (table, query = "") => sb(`${table}?${query}&order=id.asc`, { prefer: "return=representation" const sbPost = (table, data) => sb(table, { method: "POST", body: JSON.stringify(data), prefer: const sbPatch = (table, query, data) => sb(`${table}?${query}`, { method: "PATCH", body: JSON.const sbDelete = (table, query) => sb(`${table}?${query}`, { method: "DELETE", prefer: "return=const TABS = ["Panel", "Clientes", "Calendario", "Canceladas"];
