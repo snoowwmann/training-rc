@@ -1,13 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const SUPABASE_URL = 'https://wqfouncmysvajyhjnntt.supabase.co';
-const SUPABASE_KEY = [
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9',
-  'eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZm91bmN',
-  'teXN2YWp5aGpubnR0Iiwicm9sZSI6ImFub24iLCJpYX',
-  'QiOjE3NzU0Mzc3NzUsImV4cCI6MjA5MTAxMzc3NX0',
-  'Zb89er0PkbDvH_TZfsZ_sCm-gkUTDzYau1BguQz3u0A'
-].join('.');
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' + '.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndxZm91bmNteXN2YWp5aGpubnR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0Mzc3NzUsImV4cCI6MjA5MTAxMzc3NX0' + '.Zb89er0PkbDvH_TZfsZ_sCm-gkUTDzYau1BguQz3u0A';
 
 const sb = (endpoint, opts = {}) => fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, {
   ...opts,
